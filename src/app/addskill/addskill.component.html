@@ -1,0 +1,69 @@
+<!-- Default form register -->
+<form class="text-center border border-light p-5">
+
+  <p class="h4 mb-4">Add New Skill</p>
+
+  <div class="form-row mb-4">
+      <div class="col">
+          <!-- First name -->
+          <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name"  name="firstname" [(ngModel)]="data.firstname" > 
+      </div>
+      <div class="col">
+          <!-- Last name -->
+          <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name" name="lastname" [(ngModel)]="data.lastname">
+      </div>
+  </div>
+
+  <!-- E-mail -->
+  <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" name="email" [(ngModel)]="data.email">
+
+   <!-- Skill name -->
+   <input type="text" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Skill Name" name="skillname" [(ngModel)]="data.skillname">
+
+  <!-- Price -->
+  <input type="number" id="defaultRegisterFormPrice" class="form-control mb-4" placeholder="Price" name="price" [(ngModel)]="data.price">
+
+  <!-- City -->
+  <input type="text" id="defaultRegisterFormcity" class="form-control" placeholder="City" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="city" [(ngModel)]="data.city">
+  <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+  
+  </small>
+
+  <!-- Phone number -->
+  <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock" name="phone" [(ngModel)]="data.phone">
+  <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+      
+  </small>
+
+  <div class="form-group purple-border">
+    <textarea class="form-control" id="exampleFormControlTextarea4" placeholder="Describe yourself here..."  rows="3" name="description" [(ngModel)]="data.description"></textarea>
+  </div>  
+ 
+  <!-- Sign up button -->
+  <button class="btn btn-info my-4 btn-block" type="submit" (click)="insertSkill()" >Add</button>
+
+  <!-- Social register -->
+  <p>or sign up with:</p>
+
+  <a type="button" class="light-blue-text mx-2">
+      <i class="fab fa-facebook-f"></i>
+  </a>
+  <a type="button" class="light-blue-text mx-2">
+      <i class="fab fa-twitter"></i>
+  </a>
+  <a type="button" class="light-blue-text mx-2">
+      <i class="fab fa-linkedin-in"></i>
+  </a>
+  <a type="button" class="light-blue-text mx-2">
+      <i class="fab fa-github"></i>
+  </a>
+
+  <hr>
+
+  <!-- Terms of service -->
+  <p>By clicking
+      <em>Sign up</em> you agree to our
+      <a href="" target="_blank">terms of service</a>
+
+</form>
+<!-- Default form register -->
