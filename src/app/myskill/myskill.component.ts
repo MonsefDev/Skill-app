@@ -29,6 +29,14 @@ export class MyskillComponent implements OnInit {
   ngOnInit() {
   }
 
+  onEdit($key:string,firstname:string,lastname:string,email:string,skillname:string,price:string,city :string,phone:string,description:string){
+    console.log('onedit');
+  }
+
+  onDelete($key:string){
+    console.log('ondelete');
+  }
+
 }
 
 export class ListItemClass{

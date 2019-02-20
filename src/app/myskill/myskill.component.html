@@ -5,7 +5,7 @@
         <table class="table table-bordered">
             <thead>
               <tr>
-                <th scope="col">$key</th>
+
                 <th scope="col">First Name</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">Skill Name</th>
@@ -17,15 +17,74 @@
             </thead>
             <tbody>
               <tr *ngFor="let item of itemArray">
-                  <td>{{item.$key}}</td> 
                 <td>{{item.firstname}}</td>               
                 <td>{{item.lastname}}</td>
                 <td>{{item.skillname}}</td>
                 <td>@{{item.price}}</td>
                 <td>{{item.city}}</td>
                 <td>{{item.phone}}</td>
-                <td ><a><span><i class="fas fa-edit"></i></span></a></td>
-                <td ><a><spa><i class="fas fa-trash-alt"></i></spa> </a></td>
+                <td ><a class="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal"  ><span><i class="fas fa-edit"></i></span></a></td>
+                <td ><a class="btn btn-danger"  (click)="onDelete(item.$key)"><spa><i class="fas fa-trash-alt"></i></spa> </a></td>
+
+
+                <!-- Modal -->
+<div class="modal fade" id="basicExampleModal" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Edit Skill</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        
+        <div class="form-row mb-4">
+            <div class="col">
+                <!-- First name -->
+                <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name" value="{{item.firstname}}"> 
+            </div>
+            <div class="col">
+                <!-- Last name -->
+                <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name"  value="{{item.lastname}}">
+            </div>
+        </div>
+      
+        <!-- E-mail -->
+        <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" value="{{item.email}}">
+      
+         <!-- Skill name -->
+         <input type="text" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Skill Name" value="{{item.skillname}}">
+      
+        <!-- Price -->
+        <input type="number" id="defaultRegisterFormPrice" class="form-control mb-4" placeholder="Price" value="{{item.price}}">
+      
+        <!-- City -->
+        <input type="text" id="defaultRegisterFormcity" class="form-control" placeholder="City" aria-describedby="defaultRegisterFormPasswordHelpBlock" value="{{item.city}}">
+        <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+        
+        </small>
+      
+        <!-- Phone number -->
+        <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock" value="{{item.phone}}">
+        <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+            
+        </small>
+      
+        <div class="form-group purple-border">
+          <textarea class="form-control" id="exampleFormControlTextarea4" placeholder="Describe yourself here..."  rows="3" value="{{item.description}}" ></textarea>
+        </div>  
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-primary" (click)="onEdit(item.$key,item.firstname,item.lastname,item.email,item.skillname,item.price,item.city,item.phone,item.description)" >Edit</button>
+    </div>
+  </div>
+</div>
+</div>
+
               </tr>       
             
             </tbody>
@@ -36,3 +95,4 @@
 </div>  
 
 
+ 
