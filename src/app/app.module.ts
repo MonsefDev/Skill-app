@@ -18,9 +18,8 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { ToastrModule } from 'ngx-toastr';
-import { CommonModule } from '@angular/common';
-
+ import { CommonModule } from '@angular/common';
+import {ToastModule} from 'ng2-toastr/ng2-toastr'; 
 const routes: Routes = [
   { path:"", redirectTo:'home', pathMatch:'full' },
   { path:"home", component:SliderComponent },
@@ -51,7 +50,7 @@ const routes: Routes = [
     AngularFireModule.initializeApp(environment.config),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    ToastrModule.forRoot(),
+    ToastModule.forRoot(),
     CommonModule
  
   ],

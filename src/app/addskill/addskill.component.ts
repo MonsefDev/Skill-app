@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+
 import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-addskill',
@@ -33,7 +34,7 @@ export class AddskillComponent implements OnInit {
   }
 
   itemList:AngularFireList<any>;
-  constructor(private db:AngularFireDatabase,public router:Router,private toastr: ToastrService){
+  constructor(private db:AngularFireDatabase,public router:Router,private tostar:ToastrService){
     this.itemList=db.list('skill');
    }
 
@@ -52,7 +53,7 @@ export class AddskillComponent implements OnInit {
       phone:this.data.phone,
       description:this.data.description
     });
-    this.toastr.success('New SKill Added with successfully','EMP. patients')
+    this.tostar.success('New SKill Added with successfully','EMP. patients')
     this.router.navigate(['/myskill']);
   }
 }
