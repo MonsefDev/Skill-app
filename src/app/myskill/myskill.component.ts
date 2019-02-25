@@ -44,6 +44,24 @@ export class MyskillComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  onUpdate($key){
+    this.itemArray.forEach(element => {
+      if(element['$key']==$key){
+        console.log(element['$key']);
+        console.log('$key  selected '+$key)
+        this.data.firstname =element['firstname'];
+        this.data.lastname=element['lastname'];
+        this.data.email=element['email'];
+        this.data.skillname=element['skillname'];
+        this.data.price=element['price'];
+        this.data.city=element['city'];
+        this.data.phone=element['phone'];
+        this.data.description=element['description'];
+      }
+ 
+    });
+  }
   onEdit($key:string){
     this.data.firstname  
     this.data.lastname 
@@ -82,28 +100,13 @@ export class MyskillComponent implements OnInit {
 
     let a=document.getElementsByClassName('modal-backdrop fade show');
     a[0].classList.remove("modal-backdrop");   
-
-  //  this.route.navigate['/myskill'];
-  //  this.itemArray=[];
+    console.log('key '+$key+'firstname '+ this.data.firstname +'lastname '+this.data.lastname+'price '+this.data.price);
+    this.itemArray=[];
+    this.route.navigate['/myskill'];
+   
   }
 
-  onUpdate($key){
-    this.itemArray.forEach(element => {
-      if(element['$key']==$key){
-        console.log(element['$key']);
-        console.log('$key  selected '+$key)
-        this.data.firstname =element['firstname'];
-        this.data.lastname=element['lastname'];
-        this.data.email=element['email'];
-        this.data.skillname=element['skillname'];
-        this.data.price=element['price'];
-        this.data.city=element['city'];
-        this.data.phone=element['phone'];
-        this.data.description=element['description'];
-      }
  
-    });
-  }
 
   onDelete($key:string){
     console.log('ondelete');
