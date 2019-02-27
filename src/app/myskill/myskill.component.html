@@ -5,6 +5,7 @@
         <table class="table table-bordered">
             <thead>
               <tr>
+                <div>
                 <th scope="col">First Name</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">Skill Name</th>
@@ -12,10 +13,12 @@
                 <th scope="col">City</th>
                 <th scope="col" >Phone</th>
                 <th scope="col" colspan="2">Action</th>
+              </div> 
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let item of itemArray">
+                <div *ngIf="item.uid ===myUid">
                 <td>{{item.firstname}}</td>               
                 <td>{{item.lastname}}</td>
                 <td>{{item.skillname}}</td>
@@ -81,7 +84,7 @@
                   </div>
                 </div>
                 </div>
-
+              </div>
               </tr>       
             
             </tbody>

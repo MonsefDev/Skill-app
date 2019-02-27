@@ -25,6 +25,7 @@ export class MyskillComponent implements OnInit {
     description:""
   }
 
+  myUid:any;
 
   constructor(public db:AngularFireDatabase,private route:Router) 
   {
@@ -38,6 +39,8 @@ export class MyskillComponent implements OnInit {
            
           })
       })
+
+      this.myUid=localStorage.getItem('uid');
 
      // console.log(this.itemArray);
    }

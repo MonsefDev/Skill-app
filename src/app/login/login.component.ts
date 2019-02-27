@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
 
   email:string="";
   password:string="";
+  uid:any;
   ngOnInit() {
   }
   
@@ -22,6 +23,12 @@ export class LoginComponent implements OnInit {
     .then(user=>{
       console.log(this.email+' / '+this.password);
       localStorage.setItem('isLoggedIn','true');
+      localStorage.setItem('email',this.fire.auth.currentUser.email);
+      this.fire.authState.subscribe(auth=>{
+        if(auth){
+           localStorage.setItem('uid',auth.uid);
+          }
+      })
       this.router.navigate(['/home']);
       
     })

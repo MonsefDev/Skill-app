@@ -20,6 +20,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
+import { DetailSkillComponent } from './detail-skill/detail-skill.component';
+import { UserProfilComponent } from './user-profil/user-profil.component';
 const routes: Routes = [
   { path:"", redirectTo:'home', pathMatch:'full' },
   { path:"home", component:SliderComponent },
@@ -28,6 +30,10 @@ const routes: Routes = [
   { path:"register", component:RegisterComponent },
   { path:"myskill", component:MyskillComponent },
   { path:"allskill", component:AllskillsComponent },
+  { path:"details/:id", component:DetailSkillComponent },
+  { path:"profil", component:UserProfilComponent },
+  
+  
 ];
 
 @NgModule({
@@ -39,7 +45,9 @@ const routes: Routes = [
     RegisterComponent,
     LoginComponent,
     MyskillComponent,
-    AllskillsComponent
+    AllskillsComponent,
+    DetailSkillComponent,
+    UserProfilComponent
   ],
   imports: [
     BrowserModule,

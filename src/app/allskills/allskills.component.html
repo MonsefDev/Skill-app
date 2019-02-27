@@ -11,7 +11,8 @@
                 <th scope="col">Price</th>
                 <th scope="col">City</th>
                 <th scope="col" >Phone</th>
-                <th scope="col" colspan="2">Action</th>
+                <th scope="col" >Email</th>
+                <!-- <th scope="col" colspan="2">Action</th> -->
               </tr>
             </thead>
             <tbody>
@@ -22,11 +23,15 @@
                 <td>@{{item.price}}</td>
                 <td>{{item.city}}</td>
                 <td>{{item.phone}}</td>
-                <td ><a class="btn btn-primary" (click)="onUpdate(item.$key)"  data-toggle="modal" data-target="#basicExampleModal"  ><span><i class="fas fa-edit"></i></span></a></td>
-                <td ><a class="btn btn-danger"  (click)="onDelete(item.$key)"><spa><i class="fas fa-trash-alt"></i></spa> </a></td>
+                <td>{{item.email}}</td>
+                <td>
+                    <button type="button" class="btn btn-primary" (click)="onDetalis(item.$key)" >Details</button>
+                </td>
+                <!-- <td ><a class="btn btn-primary" (click)="onUpdate(item.$key)"  data-toggle="modal" data-target="#basicExampleModal"  ><span><i class="fas fa-edit"></i></span></a></td>
+                <td ><a class="btn btn-danger"  (click)="onDelete(item.$key)"><spa><i class="fas fa-trash-alt"></i></spa> </a></td> -->
                 
-                <!-- Modal -->
-                <div class="modal fade" id="basicExampleModal" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel"
+                
+              <!-- <div class="modal fade" id="basicExampleModal" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
@@ -40,31 +45,30 @@
                         
                         <div class="form-row mb-4">
                             <div class="col">
-                                <!-- First name -->
+                                
                                 <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name" name="firstname" [(ngModel)]="data.firstname" > 
                             </div>
                             <div class="col">
-                                <!-- Last name -->
+                                
                                 <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name"  name="lastname" [(ngModel)]="data.lastname">
                             </div>
                         </div>
                       
-                        <!-- E-mail -->
+                       
                         <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" name="email" [(ngModel)]="data.email">
-                      
-                        <!-- Skill name -->
+                   
                         <input type="text" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Skill Name" name="skillname" [(ngModel)]="data.skillname">
                       
-                        <!-- Price -->
+                        
                         <input type="number" id="defaultRegisterFormPrice" class="form-control mb-4" placeholder="Price" name="price" [(ngModel)]="data.price">
                       
-                        <!-- City -->
+                     
                         <input type="text" id="defaultRegisterFormcity" class="form-control" placeholder="City" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="city" [(ngModel)]="data.city">
                         <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
                         
                         </small>
                       
-                        <!-- Phone number -->
+                       
                         <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock" name="phone" [(ngModel)]="data.phone">
                         <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
                             
@@ -80,7 +84,7 @@
                     </div>
                   </div>
                 </div>
-                </div>
+                </div>   -->
 
               </tr>       
             
