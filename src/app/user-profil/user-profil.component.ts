@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
-import { Observable } from 'rxjs';
-import { Router,RouterModule } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { Router} from '@angular/router';
+import { AngularFireStorage,AngularFireStorageReference, AngularFireUploadTask } from 'angularfire2/storage';
 
 @Component({
   selector: 'app-user-profil',
@@ -24,8 +25,15 @@ export class UserProfilComponent implements OnInit {
   itemArray=[];
   email:string;
   myid:string;
+
+
+
+  ref:AngularFireStorageReference;
+  task:AngularFireUploadTask;
+  downloadUrl:Observable<string>;
+  uploadProgress: Observable<number>;
  
-   constructor(public db:AngularFireDatabase,private route:Router) 
+   constructor(private afStorage:AngularFireStorage,public db:AngularFireDatabase,private route:Router) 
   {
 
     
@@ -59,10 +67,27 @@ export class UserProfilComponent implements OnInit {
   ngOnInit() {
     console.log(this.data);
   }
+  
+
+  upload(event) {
+    const id = Math.random().toString(36).substring(2);
+    this.ref = this.afStorage.ref(id);
+    this.task = this.ref.put(event.target.files[0]);
+    this.uploadProgress = this.task.percentageChanges();
+    this.downloadUrl = this.task.downloadURL();
+  }
+
+  // upload(event){
+  //   // const id=Math.random().toString(36).substring(2);
+  //   // this.ref=this.afStorage.ref(id);
+  //   // this.task=this.ref.put(event.target.files[0]);
+  //   // this.downloadUrl=this.ref.getDownloadURL();
+  //   // console.log(this.downloadUrl);
+    
+  // }
+
 
 }
-
-
 export class ListItemClass{
   $key: string
   firstname :string;

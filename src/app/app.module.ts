@@ -22,6 +22,8 @@ import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 import { DetailSkillComponent } from './detail-skill/detail-skill.component';
 import { UserProfilComponent } from './user-profil/user-profil.component';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+ 
 const routes: Routes = [
   { path:"", redirectTo:'home', pathMatch:'full' },
   { path:"home", component:SliderComponent },
@@ -59,6 +61,7 @@ const routes: Routes = [
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     CommonModule,
+    AngularFireStorageModule,
     ToastrModule.forRoot()
  
   ],

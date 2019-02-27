@@ -10,10 +10,10 @@ export const environment = {
     authDomain: "skills-app-71dea.firebaseapp.com",
     databaseURL: "https://skills-app-71dea.firebaseio.com",
     projectId: "skills-app-71dea",
-    storageBucket: "",
+    storageBucket: "skills-app-71dea.appspot.com",
     messagingSenderId: "124401350645"
   }
-};
+}
 
 /*
  * In development mode, to ignore zone related error stack frames such as
